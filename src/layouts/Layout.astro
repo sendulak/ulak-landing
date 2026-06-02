@@ -3,21 +3,67 @@ import "../styles/global.css";
 
 interface Props {
   title?: string;
+  description?: string;
+  canonicalUrl?: string;
 }
 
-const { title = "ulak — one campaign, thousands of unique emails" } = Astro.props;
+const {
+  title = "ulak — one campaign, thousands of unique emails",
+  description = "ulak writes a different marketing email for every person on your list. connect your data, describe your campaign, hit send.",
+  canonicalUrl = "https://sendulak.com",
+} = Astro.props;
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="ulak writes different marketing emails for every person on your list. same campaign, totally different emails." />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="ulak" />
+    <meta property="og:image" content={`${canonicalUrl}/hero-messenger.png`} />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="533" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${canonicalUrl}/hero-messenger.png`} />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <title>{title}</title>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "ulak",
+      "applicationCategory": "BusinessApplication",
+      "description": description,
+      "url": canonicalUrl,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free tier available"
+      },
+      "operatingSystem": "Web"
+    })} />
   </head>
   <body class="bg-white text-gray-900 antialiased">
     <slot />

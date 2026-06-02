@@ -1,0 +1,144 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="docs — ulak" description="get started with ulak. learn how to connect your data, create campaigns, and send personalized emails.">
+  <Nav />
+  <main class="pt-28 pb-20 md:pt-36 md:pb-28">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="hero-enter">
+        <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight">Docs</h1>
+        <p class="mt-4 text-lg text-gray-500">Everything you need to get up and running.</p>
+      </div>
+
+      <div class="mt-16 space-y-16">
+        <!-- Quick Start -->
+        <section class="fade-in">
+          <h2 class="text-2xl font-bold tracking-tight">Quick start</h2>
+          <div class="mt-6 space-y-4 text-gray-600 leading-relaxed">
+            <p>Get your first personalized campaign out in under 5 minutes.</p>
+            <ol class="list-decimal list-inside space-y-3 ml-1">
+              <li><strong class="text-gray-900">Create an account</strong> — sign up at sendulak.com and confirm your email.</li>
+              <li><strong class="text-gray-900">Connect your audience</strong> — import contacts via CSV or connect Stripe, HubSpot, or Salesforce.</li>
+              <li><strong class="text-gray-900">Create a campaign</strong> — describe what you want to say in plain language.</li>
+              <li><strong class="text-gray-900">Review & send</strong> — preview a few generated emails, then hit send.</li>
+            </ol>
+          </div>
+        </section>
+
+        <!-- Integrations -->
+        <section class="fade-in">
+          <h2 class="text-2xl font-bold tracking-tight">Integrations</h2>
+          <div class="mt-6 grid sm:grid-cols-2 gap-4">
+            <div class="border border-gray-200 rounded-xl p-5">
+              <h3 class="font-semibold">Stripe</h3>
+              <p class="mt-1 text-sm text-gray-500">Sync customers and purchase data automatically.</p>
+            </div>
+            <div class="border border-gray-200 rounded-xl p-5">
+              <h3 class="font-semibold">HubSpot</h3>
+              <p class="mt-1 text-sm text-gray-500">Pull contacts, deals, and lifecycle stages.</p>
+            </div>
+            <div class="border border-gray-200 rounded-xl p-5">
+              <h3 class="font-semibold">Salesforce</h3>
+              <p class="mt-1 text-sm text-gray-500">Connect leads and accounts from your CRM.</p>
+            </div>
+            <div class="border border-gray-200 rounded-xl p-5">
+              <h3 class="font-semibold">CSV upload</h3>
+              <p class="mt-1 text-sm text-gray-500">Drop in a spreadsheet. Works with any data source.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Campaigns -->
+        <section class="fade-in">
+          <h2 class="text-2xl font-bold tracking-tight">Campaigns</h2>
+          <div class="mt-6 space-y-4 text-gray-600 leading-relaxed">
+            <p>A campaign is a single message that ulak turns into unique emails for each recipient.</p>
+            <div class="border border-gray-200 rounded-xl p-5 bg-gray-50">
+              <p class="text-sm font-medium text-gray-900 mb-2">Example prompt</p>
+              <p class="text-sm text-gray-500 italic">"We just launched dark mode. Let our users know — keep it casual and short."</p>
+            </div>
+            <p>ulak uses each recipient's profile, interests, and history to generate a version that feels relevant to them. You can preview any email before sending.</p>
+          </div>
+        </section>
+
+        <!-- Brand Voice -->
+        <section class="fade-in">
+          <h2 class="text-2xl font-bold tracking-tight">Brand voice</h2>
+          <div class="mt-6 space-y-4 text-gray-600 leading-relaxed">
+            <p>On the Pro plan and above, ulak learns how your team writes. Paste a few example emails or describe your tone, and every generated email will match it.</p>
+            <p>You can update your brand voice anytime from the settings page.</p>
+          </div>
+        </section>
+
+        <!-- API -->
+        <section class="fade-in">
+          <h2 class="text-2xl font-bold tracking-tight">API</h2>
+          <div class="mt-6 space-y-4 text-gray-600 leading-relaxed">
+            <p>Available on the Scale plan. Send campaigns programmatically, sync audiences, and pull analytics.</p>
+            <div class="border border-gray-200 rounded-xl overflow-hidden">
+              <div class="bg-gray-900 text-gray-300 p-5 text-sm font-mono leading-relaxed">
+                <p class="text-gray-500"># create a campaign</p>
+                <p>curl -X POST https://api.sendulak.com/v1/campaigns \</p>
+                <p class="pl-4">-H "Authorization: Bearer YOUR_API_KEY" \</p>
+                <p class="pl-4">-d '&#123;"prompt": "announce our new feature"&#125;'</p>
+              </div>
+            </div>
+            <p>Full API reference coming soon.</p>
+          </div>
+        </section>
+
+        <!-- Limits -->
+        <section class="fade-in">
+          <h2 class="text-2xl font-bold tracking-tight">Limits & fair use</h2>
+          <div class="mt-6">
+            <div class="border border-gray-200 rounded-xl overflow-hidden">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="border-b border-gray-200 bg-gray-50">
+                    <th class="text-left p-4 font-semibold text-gray-900">Plan</th>
+                    <th class="text-left p-4 font-semibold text-gray-900">People</th>
+                    <th class="text-left p-4 font-semibold text-gray-900">Emails/mo</th>
+                  </tr>
+                </thead>
+                <tbody class="text-gray-600">
+                  <tr class="border-b border-gray-100">
+                    <td class="p-4">Free</td>
+                    <td class="p-4">1,000</td>
+                    <td class="p-4">5,000</td>
+                  </tr>
+                  <tr class="border-b border-gray-100">
+                    <td class="p-4">Pro</td>
+                    <td class="p-4">10,000</td>
+                    <td class="p-4">100,000</td>
+                  </tr>
+                  <tr class="border-b border-gray-100">
+                    <td class="p-4">Scale</td>
+                    <td class="p-4">50,000</td>
+                    <td class="p-4">500,000</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4">Enterprise</td>
+                    <td class="p-4">Unlimited</td>
+                    <td class="p-4">Unlimited</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Support -->
+        <section class="fade-in">
+          <h2 class="text-2xl font-bold tracking-tight">Need help?</h2>
+          <p class="mt-4 text-gray-600 leading-relaxed">
+            Reach out at <a href="mailto:support@sendulak.com" class="text-gray-900 underline underline-offset-2">support@sendulak.com</a> and we'll get back to you within a day.
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
